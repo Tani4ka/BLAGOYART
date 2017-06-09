@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'pt_sansregular';
+  src: url('../fonts/pt-sans-regular/pt_sans-web-regular-webfont.eot');
+  src: url('../fonts/pt-sans-regular/pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/pt-sans-regular/pt_sans-web-regular-webfont.woff2') format('woff2'),
+  url('../fonts/pt-sans-regular/pt_sans-web-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pt_sansbold';
+  src: url('../fonts/pt-sans-bold/pt_sans-web-bold-webfont.eot');
+  src: url('../fonts/pt-sans-bold/pt_sans-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/pt-sans-bold/pt_sans-web-bold-webfont.woff2') format('woff2'),
+  url('../fonts/pt-sans-bold/pt_sans-web-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

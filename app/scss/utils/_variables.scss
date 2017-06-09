@@ -1,0 +1,42 @@
+/* reset */
+$min-width: 320px; 
+$max-width: 1320px; //1240
+$max-width-slider: 1434px;  //1355
+$base-bg: #FFF; 
+$base-font-size: 13px; 
+$base-line-height: 18px; 
+$base-font-family: Arial, sans-serif; 
+$custom-font-family: 'pt_sansregular', sans-serif;
+$link-color: #100da9;
+$default-transition:all 0.2s linear;
+
+/* main variables */
+
+//text, titles
+$text-color: #000;
+$title-color: #000;
+$title-font-family: $custom-font-family;
+
+$font-size-h1: 36px;
+$line-height-h1: 42px;
+$font-size-h2: 32px;
+$line-height-h2: 37px;
+$font-size-h3: 28px;
+$line-height-h3: 32px;
+
+//colors
+$black: #111111;
+$white: #ffffff;
+$wheat: #cb944c;
+$grey: #747688;
+$blue: #252a54;
+$lightblue: #3eade2;
+
+
+//helper templates
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items:  center;
+}
