@@ -2,9 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>BLAGOYART</title>
+	<!--<link rel="stylesheet" href="fonts/font-awesome/font-awesome.min.css" />-->
 	<link rel="stylesheet" type="text/css" href="css/style.css" />	
 </head>
 <body class="loaded">
@@ -45,13 +46,13 @@
 			<div class="header">
 				<div class="header__item header-logo">
 					<div class="logo">
-						<a class="logo__link" href="#"><img class="logo__img" src="img/logo.jpg"></a>
+						<a class="logo__link" href="#"><img class="logo__img" src="img/logo.jpg" alt=""></a>
 						<p class="logo__text">Интернет-магазин «Благой арт»</p>
 					</div>
 				</div>
 				<div class="header__item header-search">
 					<div class="search">
-						<form class="search__form" action="">
+						<form class="search__form" action="#">
 							<input class="search__input" type="text" name="text" placeholder="Введите название или артикул"/>
 							<button class="search__button" type="submit" name="submit"></button>
 						</form>
@@ -61,25 +62,28 @@
 					<a class="tel" href="#">+7 (800) 707-81-39</a>
 				</div>
 				<div class="header__item header-schedule">
-					<div class="schedule">
+					<a href="#home" class="schedule">
 						<div class="schedule__text schedule__text-time">ПН-ПТ с 9:00 до 18:00</div>
 						<div class="schedule__text schedule__text-delivery">Доставка по РФ и СНГ</div>
-					</div>
+					</a>
 				</div>
 				<div class="header__item header-basketwrap">
 					<div class="basket">
-						<div class="basket__item">тoваров / <span class="basket__item-span">56 789 р</span></div>
+						<a href="#" class="basket__item">тoваров / <span class="basket__item-span">56 789 р</span></a>
 					</div>
 					<div class="enter">
-						<div class="enter__item">войти</div>
+						<a href="#" class="enter__item">войти</a>
 					</div>
 				</div>
+
 				<div class="header__item header-menu">
 					<nav class="menu">
-						<a href="#" class="menu__opener">
-							<i class="fa fa-list-ul" aria-hidden="true"></i>
-							<span class="menu__opener-span"></span>
-						</a>
+						<input class="menu__open" type="checkbox" name="checkbox" id="open">
+						<label for="open" class="menu__label">
+							<span class="menu__opener">
+								<span class="menu__opener-span"></span>
+							</span>
+						</label>
 						<ul class="menu__list">
 							<li class="menu__li"><a class="menu__link" href="#">каталог товаров</a>
 								<ul class="submenu submenu__first-inner">
@@ -103,7 +107,24 @@
 							<li class="menu__li"><a class="menu__link" href="#">скидки</a></li>
 							<li class="menu__li"><a class="menu__link" href="#">оплата и доставка</a></li>
 							<li class="menu__li"><a class="menu__link" href="#">документы</a></li>
-							<li class="menu__li"><a class="menu__link" href="#">контакты</a></li>
+							<li class="menu__li"><a class="menu__link" href="#">контакты</a>
+								<ul class="submenu submenu__first-inner">
+									<li class="submenu__li submenu__li_active"><a class="submenu__link" href="#">Свадебная бижутерия</a></li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Аксессуары для волос</a></li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Броши</a></li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Мужские аксессуары</a>
+										<ul class="submenu submenu__second-inner">
+											<li class="submenu__li"><span class="submenu__li-header">Мужская бижутерия</span></li>
+											<li class="submenu__li"><a class="submenu__link" href="#">Браслеты</a></li>
+											<li class="submenu__li"><a class="submenu__link" href="#">Кулоны</a></li>
+											<li class="submenu__li"><a class="submenu__link" href="#">Зажими и запонки</a></li>
+										</ul>
+									</li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Клатчи</a></li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Детская бижутерия</a></li>
+									<li class="submenu__li"><a class="submenu__link" href="#">Демонстрационное оборудование</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -125,20 +146,22 @@
 
 </div>		
 
-<div class="icon-load"></div>		
+<div class="icon-load"></div>	
+
+<input type="checkbox" name="checkbox">	
 
 <!-- BODY EOF   -->
 
-<script src="https://use.fontawesome.com/b9c297f52d.js"></script>
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>		
-	<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js" ></script>
-	<script type="text/javascript" src="js/components/slick.js" ></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/components/slick.js"></script>
 	<!--
 	<script type="text/javascript" src="js/components/jquery.fancybox.js" ></script>
 	<script type="text/javascript" src="js/components/jquery.formstyler.js" ></script>
 	<script type="text/javascript" src="js/components/jquery.mCustomScrollbar.js" ></script>
 	-->
-	<script type="text/javascript" src="js/custom.js" ></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>

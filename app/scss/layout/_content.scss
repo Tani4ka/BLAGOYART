@@ -163,12 +163,13 @@ h3{
 	@media screen and (min-width: 768px) {
 	  width: 20px;
 	  height: 65px;
-	  top: 38%;
+	  top: 34%;
 	}
 
 	@media screen and (min-width: 992px){
 	  width: 37px;
 	  height: 128px;
+	  top: 38.5%;
 
 	  &:before {
 		background: url('../img/sprite.png') -13px -10px;
@@ -210,10 +211,18 @@ h3{
   background: rgba(210, 166, 107, 0.9);
 
   @media screen and (min-width: 768px){
-	top: 38%;
+	top: 34%;
+	width: 301px;
+	left: 4.8%;
   }
 
   @media screen and (min-width: 992px){
+	left: 8.5%;
+	top: 38.5%;
+	width: 500px;
+  }
+
+  @media screen and (min-width: 1200px){
 	left: 7.6%;
   }
 
@@ -247,14 +256,6 @@ h3{
 	  display: block;
 	}
   }
-
-   @media screen and (min-width: 768px){
-	 width: 290px;
-   }
-
-   @media screen and (min-width: 992px){
-	 width: 500px;
-   }
  }
 
 .slick-dots {
@@ -262,17 +263,18 @@ h3{
   width: 100px;
 
   @media screen and (min-width: 992px){
-  margin-top: 50px;
+  margin-top: 47px;
 }
 
   li {
 	display: inline-block;
 
 	button {
+	 @include radius(50%);
+
 	  width: 20px;
 	  height: 20px;
 	  background: rgba(203, 148, 76, 0.31);
-	  border-radius: 50%;
 	  border: none;
 	  font-size: 0;
 	  padding: 0;
@@ -294,30 +296,8 @@ h3{
 
 
 
-
-
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     body{min-height: 100hv; width: 100%; display: flex; flex-direction: column;}
 }
-@media screen and (max-width: 1200px) {
-	
-}
-
-@media screen and (min-width: 992px){
-	
-}
-
-@media screen and (max-width: 991px) {
-	
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	
-}
-
-@media screen and (max-width: 767px) {
-	
-}
-
 
 

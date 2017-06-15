@@ -111,15 +111,14 @@ header{
 
   @media screen and (min-width: 992px){
 	&-logo{
-	  width: 24%;
+	  width: 23.5%;
 	}
 
 	&-search{
-	  width: 41%;
+	  width: 41.5%;
 	}
 
 	&-basketwrap{
-	  //align-self: center;
 	  order: 1;
 	}
 
@@ -168,10 +167,12 @@ header{
 	.enter {
 	  background: url('../img/man.png') no-repeat 50% 50%;
 	}
+
+
   }
 
   @media screen and (min-width: 768px) {
-	padding: 23px 17px 20px;
+	padding: 23px 17px 13px;
 
 	&:before,
 	&:after {
@@ -187,28 +188,22 @@ header{
   }
 
   @media screen and (min-width: 768px) {
+	&:after {
+	  top: 87%;
+	}
+  }
+
+  @media screen and (min-width: 992px) {
+	padding: 29px 13px 22px;
+
 	&:before {
-	  top: 55%;
+	  top: 53%;
 	}
 	&:after {
 	  top: 83%;
 	}
   }
 
-  @media screen and (min-width: 992px) {
-	&:before {
-	  top: 54%;
-	}
-	&:after {
-	  top: 83.5%;
-	}
-  }
-
-
-
-  @media screen and (min-width: 992px) {
-	 padding: 29px 13px 30px;
-  }
 
   &-logo {
 	@media screen and (max-width: 767px) {
@@ -223,7 +218,7 @@ header{
 }
 
 
-/*logo*/
+												/*logo*/
 
 .logo {
   @media screen and (min-width: 992px){
@@ -232,12 +227,16 @@ header{
   }
 
   &__link {
-	width: 87%;
+	width: 86%;
 	display: block;
 
 	@media screen and (max-width: 767px) {
 	  width: 94%;
 	}
+
+  	@media screen and (min-width: 992px) {
+	  width: 89%;
+  	}
   }
 
   &__img {
@@ -268,8 +267,15 @@ header{
   }
 }
 
-/*search*/
+												/*search*/
 .search {
+
+  @media screen and (max-width: 767px){
+	@include radius(4px);
+
+	display: none;
+    background: $white;
+  }
 
   @media screen and (min-width: 768px){
 	width: 97.5%;
@@ -277,19 +283,20 @@ header{
   }
 
   @media screen and (min-width: 992px){
-	width: 99%;
+	width: 98.5%;
   }
 
   &__form {
 
-	@media screen and (min-width: 768px) {
+	//@media screen and (min-width: 768px) {
+	  @include radius(4px);
+
 	  display: flex;
 	  justify-content: center;
 	  align-items: stretch;
 	  border: 1px solid #b9b8bd;
-	  border-radius: 4px;
 	  height: 31px;
-	}
+	//}
 
 	@media screen and (min-width: 992px) {
 	  height: 40px;
@@ -298,18 +305,20 @@ header{
 
   &__input {
 
-	@media screen and (max-width: 767px) {
-	  border: none;
-	  font-size: 0;
-	}
-	@media screen and (min-width: 768px) {
+	//@media screen and (min-width: 768px) {
+	  @include radius(4px);
+
 	  font-size: 10px;
-	  color: #b9b8bd;
 	  border: none;
 	  width: 85%;
-	  border-radius: 4px;
 	  padding-left: 10px;
-	}
+	  background: none;
+	//}
+
+    @media screen and (max-width: 767px) {
+	  border: none;
+	  font-size: 10px;
+    }
 
 	@media screen and (min-width: 768px) and (max-width: 1920px) {
 	  font-size: calc(0.77rem + ((14 - 10) / (1920 - 768)) * 100vw - ((14 - 10) / (1920 - 768)) * 1400px);
@@ -324,11 +333,10 @@ header{
 
 	  @media screen and (max-width: 767px) {
 		border: none;
-		font-size: 0;
 		background: inherit;
 	  }
 
-	  @media screen and (min-width: 768px) {
+	  //@media screen and (min-width: 768px) {
 	  position: relative;
 	  width: 15%;
 	  border: none;
@@ -342,6 +350,7 @@ header{
 		width: 13px;
 		height: 13px;
 		background: url('../img/sprite.png') -89px -9px;
+		//background: url('../img/search1.svg');
 
 		@media screen and (min-width: 992px) {
 		  width: 18px;
@@ -350,15 +359,31 @@ header{
 		}
 	  }
 
+	//}
+  }
+
+  &-active {
+	@media screen and (max-width: 767px) {
+		display: block;
+		position: absolute;
+		top: 45px;
+		left: 10px;
+		right: 10px;
 	}
   }
 }
 
-/*tel*/
+												/*tel*/
 .tel {
+  transition: none;
+  display: block;
+
+  @media screen and (max-width: 767px) {
+	width: 100%;
+	height: 100%;
+  }
 
   @media screen and (min-width: 768px) {
-	display: block;
 	color: inherit;
 	width: 100%;
 	text-align: right;
@@ -372,6 +397,7 @@ header{
 
   @media screen and (min-width: 1200px){
 	padding-right: 0;
+	  letter-spacing: 0.2px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1920px) {
@@ -385,8 +411,15 @@ header{
 }
 
 
-/*schedule*/
+												/*schedule*/
 .schedule {
+  display: block;
+ transition: font-size 0s ease;
+
+  @media screen and (max-width: 767px) {
+	width: 100%;
+	height: 100%;
+  }
 
   @media screen and (min-width: 992px){
 	margin-top: 5px;
@@ -419,18 +452,27 @@ header{
 }
 
 
-/*basket*/
+										/*basket*/
 .basket {
 
   @media screen and (min-width: 768px) and (max-width: 991px){
   	margin-bottom: 16px;
   }
+
   @media screen and (min-width: 992px){
 	display: flex;
 	align-items: center;
+	padding-bottom: 10px;
   }
 
   &__item {
+	display: block;
+	transition: font-size 0s ease;
+
+    @media screen and (max-width: 767px) {
+	  width: 100%;
+	  height: 100%;
+    }
 
 	@media screen and (min-width: 768px) {
 	  text-transform: uppercase;
@@ -458,25 +500,26 @@ header{
 		background: url('../img/sprite.png') -87px -23px;
 
 		@media screen and (min-width: 992px){
-		  background: url('../img/sprite.png') -130px -5px;
+		  background: url('../img/sprite.png') -128px -7px;
 		  left: 0px;
-		  width: 22px;
+		  width: 23px;
 		  height: 24px;
-		  top: -3px;
+		  top: -6px;
 		}
 
 		@media screen and (min-width: 1200px){
-		  left: 10px;
+		  left: 8px;
 		}
 	  }
 
 	  &:after {
+		 @include radius(50%);
+
 		 content: "10";
 		 color: $white;
 		 font-weight: bold;
 		 left: 27px;
 		 background: $wheat;
-		 border-radius: 50%;
 		 line-height: 19px;
 		 text-align: center;
 
@@ -491,26 +534,32 @@ header{
 		   left: 20%;
 		 }
 	  }
+	}
 
-	  @media screen and (min-width: 768px) and (max-width: 1920px) {
-		font-size: calc(0.85rem + ((14 - 11) / (1920 - 768)) * 100vw - ((14 - 11) / (1920 - 768)) * 1700px);
-	  }
+    @media screen and (min-width: 768px) and (max-width: 1920px) {
+	 font-size: calc(0.85rem + ((14 - 11) / (1920 - 768)) * 100vw - ((14 - 11) / (1920 - 768)) * 1700px);
+    }
 
-	  @media screen and (min-width: 1920px){
-		font-size: 1.077em;      // 14px
-	  }
+    @media screen and (min-width: 992px){
+	  font-weight: bold;
+	  width: 100%;
+	  padding-top: 0;
+    }
 
-	  @media screen and (min-width: 992px){
-		font-weight: bold;
-		width: 100%;
-	  }
+	@media screen and (min-width: 1200px){
+	  letter-spacing: 1px;
+  	}
+
+	@media screen and (min-width: 1920px){
+      font-size: 1.077em;      // 14px
 	}
   }
 }
 
 
-/*enter*/
+									/*enter*/
 .enter {
+	transition: font-size 0s ease;
 
   @media screen and (min-width: 992px){
 	height: 100%;
@@ -519,6 +568,13 @@ header{
   }
 
   &__item{
+	display: block;
+	transition: font-size 0s ease;
+
+    @media screen and (max-width: 767px) {
+	  width: 100%;
+	  height: 100%;
+    }
 
 	@media screen and (min-width: 768px) {
 	  text-transform: uppercase;
@@ -540,7 +596,7 @@ header{
 		background: url('../img/sprite.png') -63px -24px;
 
 		@media screen and (min-width: 992px){
-		  top: 2px;
+		  top: 0px;
 		  left: 1px;height: 100%;
 		}
 	  }
@@ -549,42 +605,65 @@ header{
 	@media screen and (min-width: 992px){
 	  font-size: 16px;
 	  width: 80px;
+	  padding-top: 0;
 	}
   }
 }
 
 											/*menu*/
+
 .menu {
   height: 50px;
-  margin-bottom: 3px;
   font-size: 13px;
-  position: relative;
   @extend %flex;
   justify-content: flex-start;
 
+
   @media screen and (min-width: 992px) {
-	height: 47px;
+	height: 60px;
+  }
+
+  &__open {
+	display: none;
+  }
+
+  &__label {
+  	display: block;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+	  width: 4%;
+	}
+
+	@media screen and (min-width: 1200px) {
+	  width: 3%;
+	}
   }
 
   &__opener {
 	display: block;
-	width: 4%;
-	font-size: 14px;
-	color: $wheat;
-	height: 60%;
 
 	@media screen and (max-width: 767px) {
-	  width: 100%;
-	  height: 100%;
+	  transition: none;
 
 	  .fa-list-ul {
 		display: none;
 	  }
 	}
 
-	@media screen and (min-width: 1200px) {
-	  width: 3%;
+	@media screen and (min-width: 768px) {
+	  background: url("../img/icon.svg") no-repeat;
+	  height: 10px;
+	  margin-top: 13px;
+
 	}
+
+	@media screen and (min-width: 992px) {
+	  margin-top: 18px;
+	}
+
+	
 
 	&-span {
 	   @media screen and (max-width: 767px) {
@@ -594,6 +673,7 @@ header{
 		 background: $white;
 		 margin: 20px auto 0;
 		 position: relative;
+		 transition: background 0.5s ease;
 
 		 &:before,
 		 &:after {
@@ -604,33 +684,51 @@ header{
 		   width: 16px;
 		   height: 2px;
 		   background: $white;
+		   transition: transform 0.5s ease;
 		 }
 		 &:after {
 		   top: 6px;
 		 }
 	   }
-	 }
+	}
   }
 
   &__list {
-	width: 96%;
 	list-style: none;
 	font-family: 'pt_sansbold';
-	@extend %flex;
-	height: 100%;
-	padding-top: 2px;
 
 	@media screen and (max-width: 767px) {
+	  @include shadow(2px 3px 1px rgba(108,104,104,.33));
+	  @include radius(3px);
+
+	  background: $white;
 	  position: absolute;
-	  bottom: -47px;
 	  left: 0;
+	  top: 40px;
+	  min-width: 220px;
+	  width: 40%;
+	  z-index: 10;
+	  border: 1px solid #dddfdf;
+  	  padding: 17px 0 20px;
+  	  transform: translateX(-310px);
+  	  transition: transform 0.5s ease;
+	}
+
+	@media screen and (min-width: 768px) {
+		width: 96%;
+		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+  		align-items:  center;
+  		padding-top: 2px;
 	}
 
 	@media screen and (min-width: 992px) {
 	  width: 95%;
 	}
 	@media screen and (min-width: 1200px) {
-	  width: 87%;
+	  width: 89.5%;
 	  letter-spacing: 0.7px;
 	}
   }
@@ -638,38 +736,55 @@ header{
   &__li {
 	position: relative;
 	height: inherit;
+
+	@media screen and (max-width: 767px) {
+	  display: block;
+	}
   }
 
   &__link {
 	display: block;
 	color: inherit;
-	//height: inherit;
+	height: 100%;
 	font-weight: bold;
 	padding: 10px 20px 10px 0;
 	position: relative;
 	text-transform: uppercase;
 	font-size: 0.96em;      // 12.5px
 
-	&:after {
-	  display: none;
-	  content: "";
-	  position: absolute;
-	  top: 50%;
-	  transform: translateY(-65%);
-	  right: 0px;
-	  width: 9px;
-	  height: 8px;
-	  background: url('../img/sprite.png') -111px -31px;
+	@media screen and (max-width: 767px) {
+	  padding: 15px 20px 15px 20px;
 	}
 
-	&:hover:after {
-	  display: block;
+	@media screen and (min-width: 992px){
+	  padding-top: 16px;
+	}
+
+	@media screen and (min-width: 768px){
+		&:after {
+		  display: none;
+		  content: "";
+		  position: absolute;
+		  top: 35%;
+		  transform: translateY(-65%);
+		  right: 0px;
+		  width: 9px;
+		  height: 8px;
+		  background: url('../img/sprite.png') -111px -31px;
+
+		  @media screen and (min-width: 992px){
+	  		top: 50%;
+			}
+		}
+
+		&:hover:after {
+		  display: block;
+		}
 	}
 
 	@media screen and (min-width: 992px) and (max-width: 1200px){
 	  padding-right: 10px;
 	}
-
 
 	@media screen and (min-width: 992px) and (max-width: 1920px) {
 	  font-size: calc(0.96em + ((15 - 13) / (1920 - 992)) * 100vw - ((15 - 13) / (1920 - 992)) *1000px);
@@ -681,41 +796,93 @@ header{
   }
 }
 
-.menu__list .menu__li:hover .submenu {
+input[type="checkbox"]:checked + .menu__label ~ .menu__list {
+	@media screen and (max-width: 767px) {
+		transform: translateX(0);
+	}
+}
+input[type="checkbox"]:checked + .menu__label .menu__opener-span {
+	@media screen and (max-width: 767px) {
+		background: $lightblue;
+	}
+}
+input[type="checkbox"]:checked + .menu__label .menu__opener-span:before {
+	@media screen and (max-width: 767px) {
+		transform: rotate(45deg) translate(3px, 5px);
+		width: 20px;
+	}
+}
+input[type="checkbox"]:checked + .menu__label .menu__opener-span:after {
+	@media screen and (max-width: 767px) {
+		transform: rotate(-45deg) translate(3px, -6px);
+		width: 20px;
+	}
+}
+
+
+.menu__list .menu__li:hover>.submenu {
   display: block;
 }
 
-/*submenu*/
+.menu__list>.menu__li:hover {
+	@media screen and (max-width: 767px){
+  		background: #e9e9ea;
+	}
+}
+
+											/*submenu*/
 
 .submenu {
   display: none;
-  position: absolute;
-  top: 46px;
-  left: -28px;
   background: $white;
   font-family: 'pt_sansregular';
-  width: 245px;
-  border: 1px solid #dddfdf;
-  border-radius: 3px;
-  box-shadow: 2px 3px 1px rgba(108,104,104,.33);
-  padding: 17px 0 20px;
   z-index: 5;
+
+  @media screen and (max-width: 767px) {
+	@include shadow(0px 1px 1px rgba(108,104,104,.20));
+
+  	background: #FAF7FB;
+  	position:relative;
+  	width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+	@include shadow(2px 3px 1px rgba(108,104,104,.33));
+	@include radius(3px);
+
+	position: absolute;
+    top: 48px;
+    left: -28px;
+    width: 245px;
+    border: 1px solid #dddfdf;
+    padding: 17px 0 20px;
+  }
+
+  @media screen and (min-width: 992px) {
+	left: -41px;
+	  top: 56px;
+  }
 
   &__li {
 	list-style: none;
 	position: relative;
-	padding-right: 30px;
 
 	&:after {
 	  display: none;
 	  content: "";
 	  position: absolute;
-	  top: 50%;
+	  top: 15px;
 	  right: 15px;
-	  transform: translateY(-50%) rotate(-90deg);
 	  width: 9px;
 	  height: 8px;
 	  background: url('../img/sprite.png') -111px -31px;
+
+	  @media screen and (min-width: 768px) {
+	  	top: 0;
+	  	transform: rotate(-90deg);
+	  	padding-right: 30px;
+	  	right: 5px;
+	  }
 	}
 
 	&:hover:after,
@@ -736,14 +903,19 @@ header{
 	position: relative;
 	line-height: 16px;
 
+	@media screen and (max-width: 767px) {
+  	  position:relative;
+  	}
+
 	&:before {
+	  @include radius(3px);
+
 	  content: "";
 	  position: absolute;
 	  top: 9px;
 	  left: 15px;
 	  width: 6px;
 	  height: 6px;
-	  border-radius: 3px;
 	  background: $white;
 	  border: 1px solid $wheat;
 	}
@@ -756,8 +928,17 @@ header{
 
 .submenu__second-inner {
   display: none;
-  top: -14px;
-  left: 101%;
+
+	@media screen and (max-width: 767px) {
+	  @include shadow(0px 1px 1px rgba(108,104,104,.20));
+
+	  background: $white;
+	}
+
+    @media screen and (min-width: 768px) {
+     top: -14px;
+     left: 101%;
+    }
 
   .submenu__li-header {
 	display: block;
@@ -770,6 +951,11 @@ header{
   }
 }
 
+ @media screen and (max-width: 767px) {
+	.submenu__second-inner .submenu__li {
+		padding-left: 15px;
+	}
+}
 .submenu__li:hover .submenu__second-inner{
   display: block;
 }
@@ -778,32 +964,9 @@ header{
 }
 
 
+body {
+  overflow-y: hidden;
+}
 
 
-  body {
-	overflow-y: hidden;
-  }
-
-
-
-
-  @media screen and (max-width: 1200px) {
-
-  }
-
-  @media screen and (min-width: 992px){
-
-  }
-
-  @media screen and (max-width: 991px) {
-
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 991px) {
-
-  }
-
-  @media screen and (max-width: 767px) {
-
-  }
 
