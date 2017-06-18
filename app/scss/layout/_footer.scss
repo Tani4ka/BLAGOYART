@@ -13,7 +13,23 @@ footer{
 	order: 3;	
     -webkit-order: 3;
 	height: 1000px;
+
+	.icon-search1 {
+		font-size: 3rem;
+		&.green_mod {
+			fill: green;
+			stroke: red;
+			background: grey;
+		}
+	}
+
+	.icon-icon {
+		font-size: 2rem;
+		fill: red;
+		stroke: green;
+	}
 }
+
 
 
 

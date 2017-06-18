@@ -12,7 +12,95 @@ var gulp       = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
-    jshint       = require('gulp-jshint');
+    jshint       = require('gulp-jshint'),
+
+    svgSprite = require('gulp-svg-sprites'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace');
+
+
+gulp.task('svgSpriteBuild', function () {
+    return gulp.src('app/img/icons/*.svg')
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: {htmlMode: true}
+        }))
+        .pipe(replace('&gt;', '>'))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg",
+                    render: {
+                        scss: {
+                            dest: '../../scss/_sprite.scss',
+                            template: 'app/scss/layout/_sprite-template.scss'
+                        }
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest('app/img/'));
+});
+
+
+// gulp.task('svgSpriteBuild', function () {
+//     return gulp.src('app/img/icons/*.svg')
+//         .pipe(svgmin({
+//             js2svg: {
+//                 pretty: true
+//             }
+//         }))
+//         .pipe(cheerio({                // remove all fill and style declarations in out shapes
+//             run: function ($) {
+//                 // $('[defs]').removeAttr('defs');
+//                 $('[fill]').removeAttr('fill');
+//                 $('[stroke]').removeAttr('stroke');
+//                 $('[style]').removeAttr('style');
+//             },
+//             parserOptions: { htmlMode: true }
+//         }))
+//         .pipe(replace('&gt;', '>'))  // cheerio plugin create unnecessary string '>', so replace it.
+//         .pipe(svgSprite({            // build svg sprite
+//                 mode: "symbols",
+//                 preview: false,
+//                 selector: "icon-%f",
+//                 svg: {
+//                     symbols: 'symbol_sprite.svg'
+//                 }
+//             }
+//         ))
+//         .pipe(gulp.dest('app/'));
+// });
+//
+// gulp.task('svgSpriteSass', function () {
+//     return gulp.src('app/img/icons/*.svg')
+//         .pipe(svgSprite({
+//                 preview: false,
+//                 selector: "icon-%f",
+//                 svg: {
+//                     sprite: 'sprite.svg'
+//                 },
+//                 cssFile: '../scss/_svg-sprite.scss',
+//                 templates: {
+//                     css: require("fs").readFileSync('app/scss/_sprite-template.scss', "utf-8")
+//                 }
+//             }
+//         ))
+//         .pipe(gulp.dest('app/'));
+// });
+//
+// gulp.task('svgSprite', ['svgSpriteBuild', 'svgSpriteSass']);
+
 
 
 gulp.task('sass', function(){

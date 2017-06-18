@@ -560,6 +560,7 @@ header{
 									/*enter*/
 .enter {
 	transition: font-size 0s ease;
+	padding-bottom: 10px;
 
   @media screen and (min-width: 992px){
 	height: 100%;
@@ -590,14 +591,21 @@ header{
 		content: "";
 		position: absolute;
 		top: 0px;
-		left: 0px;
+		left: 2px;
 		width: 17px;
 		height: 15px;
-		background: url('../img/sprite.png') -63px -24px;
+		//background: url('../img/sprite.png') -63px -24px;
+	    background: url('../img/yes.svg') no-repeat 90% 82%,
+	  				url('../img/man2.svg') no-repeat;
+	    background-size: 7px, 16px;
 
 		@media screen and (min-width: 992px){
-		  top: 0px;
-		  left: 1px;height: 100%;
+		  width: 19px;
+		  height: 17px;
+		  top: -3px;
+		  left: 0;
+		  background-position: 100% 82%, 100% 100%;
+		  background-size: 8px, 19px;
 		}
 	  }
 	}
@@ -965,7 +973,7 @@ input[type="checkbox"]:checked + .menu__label .menu__opener-span:after {
 
 
 body {
-  overflow-y: hidden;
+  //overflow-y: hidden;
 }
 
 

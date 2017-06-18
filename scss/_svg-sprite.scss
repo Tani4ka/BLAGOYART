@@ -1,0 +1,30 @@
+
+/*sprite-template*/
+
+.icon {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	fill: inherit;
+	stroke: inherit;
+}
+{#svg}
+.{name} {
+	font-size:{height}px;
+	width:({width}/{height})+em;
+}
+{/svg}
+
+//.icon {
+//	display: inline-block;
+//	width: 1em;
+//	height: 1em;
+//	fill: currentColor;
+//}
+
+//{{#shapes}}
+//.icon-{{base}} {
+//	font-size:({{height.inner}}/10)*1rem;
+//	width:({{width.inner}}/{{height.inner}})*1em;
+//}
+//{{/shapes}}
